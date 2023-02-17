@@ -1,0 +1,12 @@
+Takeaways
+
+Duration: How long an iteration of an animation takes to complete
+Iteration Count: How many times an animation should repeat
+Delay: How long it takes before an animation starts (Delay is going to apply to the first iteration of the animation)
+Timing Function: The easing of an animation. (A atenuação de uma animação)
+cubic-bezier: A custom timing function that allows you to create your own easing curve
+  Recebe 4 parametros: x1, y1, x2, y2 podemos pensar em coordana x e y como um plano cartesiano
+  cubic-bezier(0.5, 0, 0.5, 1) 
+     0.5, 0 means the animation will start .5 at axis x and 0 axis y 
+      0.5, 1 means the animation will end  .5 at axis x and 1 axis y
+ 
