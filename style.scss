@@ -1,9 +1,17 @@
 @import './styles/base.scss';
 
+:root {
+  --primary-color: #fff
+  --fg-color: #000;
+  --duration: 1s;
+  --easing: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 5vmin;
-  background-color: #f4f4f4;
+  background-color: var(--primary-color);
+  
 }
 
 a {
@@ -26,6 +34,92 @@ ul {
 .ball {
   height: 5vmin;
   width: 5vmin;
+  left: 50vw;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
+  background: red;
+
+  --duration: 1s;
+  --stagger: 0.5s;
+  --interval: calc(var(--duration) - var(--stagger));
+  animation: 
+   move-right var(--duration) calc(var(--interval) * var(--i)) both;
+
+ 
+  // .b2  {
+  //   background: #fe932a;
+  //   animation-delay: calc(var(--duration) - var(--stagger))
+  // }
+  
+  // .b3 {
+  //   animation-delay: calc(var(--duration) * 2 - var(--stagger) * 2)
+  // }
+  
+
+  // animation: slide-right var(--duration) var(--easing) infinite;
+
+  // animation-name: move-like-a-square;
+  // animation-duration: 4s;
+  // animation-delay: 1s;
+  // animation-fill-mode: forwards;
+  // animation: move-like-a-square 4s 1s forwards
+
+  // transition-property:        background, transform;
+  // transition-timing-function: linear,     ease-in-out;
+  // transition-duration: .5s;
+  // transition: all 0.3s ease-in-out;
+  
+  // &:hover {
+   
+  //   transition-duration:        1s,         3s;
+  //   background: blue;
+  //   transform: scale(2);
+    
+  // }
 }
+
+
+
+@keyframes move-right {
+   from {
+    transform: none;
+   }
+   to {
+    transform: translateX(25vw)
+   }
+}
+
+
+
+
+// @keyframes move-like-a-square {
+//   0% {
+//     transform: none
+//   }
+
+//   25% {
+//      transform: translateX(20vw);
+//      animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+//   }
+
+//   50% {
+//     transform: translateX(20vw) translateY(20vw);
+//   }
+
+//   75% {
+//     transform: translateX(0) translateY(20vw);
+//   }
+  
+//   100% {
+//     transform: translateY(-20vw);
+//   }
+// }
+
+// @keyframes slide-right {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(50vw);
+//   }
+// }

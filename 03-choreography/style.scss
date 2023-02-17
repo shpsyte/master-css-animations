@@ -35,17 +35,24 @@ body {
   }
 
   animation: slide-up var(--animation-duration) var(--transition-easing);
+ 
 
   > .ui-input,
   > .ui-button {
     // Add animations here
+    animation-name: slide-up;
+    animation-duration: var(--animation-duration);
+    animation-timing-function: inherit;
+    animation-fill-mode: both;
   }
 
   > .ui-input {
     // ...
+    animation-delay: 0.5s;
   }
   > .ui-button {
     // ...
+     animation-delay: 0.6s
   }
 }
 

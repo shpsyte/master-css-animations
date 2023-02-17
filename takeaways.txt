@@ -9,4 +9,72 @@ cubic-bezier: A custom timing function that allows you to create your own easing
   cubic-bezier(0.5, 0, 0.5, 1) 
      0.5, 0 means the animation will start .5 at axis x and 0 axis y 
       0.5, 1 means the animation will end  .5 at axis x and 1 axis y
+
+Recomendation: the y1 starts 0 and y2 ends 1 it how works in the modal world start at 0 and ends at 1
+What to animate
+  GPU = Transform and opacity 
+  GPU = Color and background 
+  CPU (Avoid)  Height, width, left, right.. 
+
+  There is GPU  and CPU and the GPU is more faster than CPU
+  When elemnts compete with other elements the CPU is in charge of that
+  When the elements are independent the GPU is in charge of that
+
+
+
+
+Transitions
+  Transitions are a way to animate between two states of an element
+  transition-property: The CSS property you want to animate
+  transition-duration: How long the transition should take
+  transition-timing-function: The easing of the transition
+  transition-delay: How long it takes before the transition starts
+  transition-property:        background, transform;
+  transition-timing-function: linear,     ease-in-out;
+  transition-duration: .5s;
+  transition-duration: .5s;
+
+  transition: Shorthand for all of the above
+  transition: all 0.3s 0.3s ease-in-out;
+  transition: color, background 0.3s 0.3s cubic-bezier(0.5, 0, 0.5, 1);
+
+
+  Animation
+  Animation is a way to animate between multiple states of an element
+  animation-name: move-like-a-square;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+
+  animation: move-like-a-square 4s 1s forwards;
+  animation: move-like-a-square 4s 1s forwards, fade-out 2s 2s backwards;
+  
+  Keyframes
+  Keyframes are a way to define the states of an animation
+  @keyframes move-like-a-square {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  from is the same as 0%
+  to is the same as 100%
+  @keyframes move-like-a-square {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100px);
+    }
+  }
+
+
+Choreography
+ Choreography is a way to sequence animations
+   
  
